@@ -4,10 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Фитнес-центр Supergym">
+  <title>Фитнес-центр Supergym</title>
+  <link rel="preload" href="fonts/BebasNeueBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/BebasNeueRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <div style="display: none">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+
+  <div class="header-wrapper">
+    <header class="page-header">
+      <a class="page-header__link">
+        <img src="img/logo.svg" width="89" height="20" alt="Логотип Supergym">
+      </a>
+      <a class="page-header__phone" href="tel:88005555555" aria-label="Позвоните нам">
+        8-800-555-55-55
+      </a>
+    </header>
+    <div class="banner">
+      <div class="banner__text">
+        <span>Омск</span>
+        <h1>Фитнес <br>центр</h1>
+        <ul class="banner__services-list">
+          <li class="banner__services-item">Тренажёрный зал</li>
+          <li class="banner__services-item">Групповые занятия</li>
+          <li class="banner__services-item">Кардио-зона</li>
+        </ul>
+        <a class="banner-scroll button" href="#subscription">Купить абонемент</a>
+      </div>
+
+      <picture>
+        <source srcset="img/baner-photo.webp 1x, img/baner-photo@2x.webp 2x" type="image/webp">
+          <!-- 1х: 500; 2x: 1000 -->
+        <img class="banner__img" src="img/baner-photo.jpg" srcset="img/baner-photo@2x.jpg 2x" width="500" height="556" alt="Герой спортзала">
+      </picture>
+
+      <ul class="banner__networks">
+        <li>
+          <a class="banner__network-item" href="#" aria-label="Наша страничка в Facebook">Fb</a>
+        </li>
+        <li>
+          <a class="banner__network-item" href="#" aria-label="Наша страничка в VK">Vk</a>
+        </li>
+        <li>
+          <a class="banner__network-item" href="#" aria-label="Наш профиль в Instagram">Ig</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

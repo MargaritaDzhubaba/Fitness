@@ -1,0 +1,196 @@
+.banner {
+  @include wrapper;
+
+  display: flex;
+
+  padding-top: 115px;
+  padding-bottom: 94px;
+}
+
+.banner__text {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  width: 396px;
+  margin-right: 65px;
+
+  font-family: $decorative-font;
+  text-align: right;
+
+  color: $main-color;
+
+  span {
+    font-weight: normal;
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: 0.03em;
+  }
+
+  h1 {
+    margin: 13px 0 51px;
+
+    font-weight: bold;
+    font-size: 109px;
+    line-height: 109px;
+    text-align: right;
+    letter-spacing: 0.03em;
+
+    text-shadow:
+    -1px -1px 0 $main-color,
+    1px -1px 0 $main-color,
+    -1px 1px 0 $main-color,
+    1px 1px 0 $main-color;
+  }
+}
+
+.banner__services-list {
+  @include reset-list;
+
+  position: absolute;
+  bottom: 188px;
+  right: 263px;
+
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: right;
+}
+
+.banner-scroll {
+  margin-right: -2px;
+  width: 234px;
+}
+
+.banner__img {
+  display: block;
+  margin-top: -121px;
+}
+
+.banner__networks {
+  @include reset-list;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+
+  li {
+    margin-bottom: 18px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.banner__network-item {
+  display: block;
+
+  font-family: $default-font;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: $main-color;
+}
+
+@media (max-width: $tablet-width-only) {
+  .banner {
+    width: 100%;
+    padding-top: 75px;
+    padding-bottom: 82px;
+  }
+
+  .banner__text {
+    width: calc(50% - 15px);
+    margin-right: auto;
+
+    span {
+      font-size: 34px;
+      line-height: 34px;
+    }
+
+    h1 {
+      margin: 7px 0 36px;
+
+      font-size: 86px;
+      line-height: 86px;
+
+    }
+  }
+
+  .banner__services-list {
+    bottom: 141px;
+    right: 211px;
+  }
+
+  .banner-scroll {
+    width: 187px;
+  }
+
+  .banner__img {
+    margin-top: -57px;
+    width: 324px;
+    height: 390px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .banner__networks {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .banner {
+    padding-top: 73px;
+    padding-bottom: 78px;
+    padding-left: 11px;
+
+    justify-content: center; // для улучшения внещнего вида при растягивании экрана
+  }
+
+  .banner__text {
+    width: 100%;
+    max-width: 450px; // для улучшения внещнего вида при растягивании экрана
+    margin-right: 0; // для улучшения внещнего вида при растягивании экрана
+
+    span {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    h1 {
+      margin: 13px 0 38px;
+
+      font-size: 78px;
+      line-height: 78px;
+
+    }
+  }
+
+  .banner__services-list {
+    bottom: 117px;
+    right: 177px;
+  }
+
+  .banner-scroll {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 24px;
+  }
+
+  .banner__img {
+    display: none;
+  }
+}
