@@ -507,7 +507,24 @@ input[type="radio"].visually-hidden {
     background-size: 73px 73px; } }
 
 .subscription {
-  background-color: #f8f9fc; }
+  position: relative;
+  background-color: #f8f9fc;
+  overflow: hidden; }
+  .subscription::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -183px;
+    width: 470px;
+    height: 494px;
+    background-color: transparent;
+    background-image: url("../img/barbell-discs.png");
+    background-repeat: no-repeat;
+    background-position: 0 0; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      .subscription::after {
+        background-image: url("../img/barbell-discs@2x.png");
+        background-size: 470px 494px; } }
 
 .subscription__wrapper {
   margin: 0 auto;
@@ -522,7 +539,7 @@ input[type="radio"].visually-hidden {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 121px 0 120px; }
+  padding: 121px 0 80px; }
   @media (max-width: 767px) {
     .subscription__wrapper {
       width: 100%;
@@ -571,6 +588,8 @@ input[type="radio"].visually-hidden {
     margin-right: 0; }
 
 .subscription__term-button {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
   position: relative;
   padding: 0;
   font-family: "Roboto Condensed", "Aria", sans-serif;
@@ -580,14 +599,61 @@ input[type="radio"].visually-hidden {
   color: rgba(16, 38, 84, 0.5);
   border: none;
   background-color: transparent; }
-  .subscription__term-button:hover::after, .subscription__term-button:focus::after {
-    content: "";
-    position: absolute;
-    bottom: -13px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #d10a42; }
+  .subscription__term-button--active, .subscription__term-button:hover, .subscription__term-button:focus {
+    color: #102654; }
+    .subscription__term-button--active::after, .subscription__term-button:hover::after, .subscription__term-button:focus::after {
+      content: "";
+      position: absolute;
+      bottom: -13px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #d10a42; }
+
+@media (max-width: 1199px) {
+  .subscription::after {
+    bottom: -175px;
+    right: -123px;
+    background-size: 423px auto; } }
+  @media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
+    .subscription::after {
+      background-size: 423px auto; } }
+
+@media (max-width: 1199px) {
+  .subscription__wrapper {
+    padding: 101px 0 60px; }
+    .subscription__wrapper h2 {
+      margin-bottom: 27px;
+      font-size: 42px;
+      line-height: 42px; }
+  .subscription__term-list {
+    margin-bottom: 58px; }
+  .subscription__term-item {
+    margin-right: 55px; }
+  .subscription__term-button {
+    font-size: 18px;
+    line-height: 27px; } }
+
+@media (max-width: 767px) {
+  .subscription::after {
+    content: none; }
+  .subscription__wrapper {
+    padding: 70px 0 35px; }
+    .subscription__wrapper h2 {
+      margin-bottom: 21px;
+      font-size: 32px;
+      line-height: 32px; }
+  .subscription__term-list {
+    margin-bottom: 48px; }
+  .subscription__term-item {
+    margin-right: 46px; }
+  .subscription__term-button {
+    font-size: 16px;
+    line-height: 24px; } }
+
+.offer {
+  width: 100%;
+  z-index: 1; }
 
 .offer__list {
   margin: 0;
@@ -596,6 +662,9 @@ input[type="radio"].visually-hidden {
   display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   overflow: hidden; }
 
@@ -605,6 +674,8 @@ input[type="radio"].visually-hidden {
   display: flex; }
 
 .offer__item {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -615,13 +686,11 @@ input[type="radio"].visually-hidden {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 360px;
-  margin-right: 40px;
+  width: 31%;
+  margin-bottom: 40px;
   padding: 50px 68px 60px;
   background-color: #ffffff;
-  border: 7px solid;
-  border-width: 7px;
-  border-color: transparent; }
+  border: 7px solid transparent; }
   .offer__item:nth-child(3n) {
     margin-right: 0; }
   .offer__item:focus, .offer__item:hover {
@@ -646,6 +715,8 @@ input[type="radio"].visually-hidden {
   color: #495a7d; }
 
 .offer__price {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -656,8 +727,18 @@ input[type="radio"].visually-hidden {
   font-weight: bold;
   font-size: 60px;
   line-height: 90px;
-  color: #103aae;
-  text-shadow: 3 3 3 #000; }
+  color: #103aae; }
+  .offer__price::before {
+    content: attr(data-price);
+    position: absolute;
+    left: 50%;
+    bottom: 29px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: -1;
+    font-weight: bold;
+    font-size: 100px;
+    color: #e8e8e8; }
 
 .offer__unit {
   margin-left: 14px;
@@ -678,3 +759,41 @@ input[type="radio"].visually-hidden {
     opacity: 1; }
   .offer__button:active {
     opacity: 0.7; }
+
+@media (max-width: 1199px) {
+  .offer__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .offer__item {
+    width: 57.55%; } }
+
+@media (max-width: 767px) {
+  .offer__list {
+    padding: 0 15px; }
+  .offer__item {
+    width: 100%;
+    max-width: 442px;
+    margin-bottom: 35px;
+    padding: 44px 34px 47px; }
+    .offer__item h3 {
+      margin-bottom: 9px;
+      font-size: 22px;
+      line-height: 24px; }
+  .offer__term {
+    margin-bottom: 56px; }
+  .offer__price {
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 72px; }
+    .offer__price::before {
+      bottom: 24px;
+      font-size: 80px; }
+  .offer__unit {
+    margin-left: 9px; }
+  .offer__button {
+    width: 100%; } }

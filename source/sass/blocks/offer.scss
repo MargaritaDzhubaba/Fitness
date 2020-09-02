@@ -1,8 +1,15 @@
+.offer {
+  width: 100%;
+
+  z-index: 1;
+}
+
 .offer__list {
   @include reset-list;
 
   display: none;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
 
   overflow: hidden;
@@ -13,19 +20,19 @@
 }
 
 .offer__item {
+  @include transition;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 360px; //31%
-  margin-right: 40px;
+  width: 31%; //360px
+  margin-bottom: 40px;
   padding: 50px 68px 60px;
 
   background-color: $main-color;
 
-  border: 7px solid;
-  border-width: 7px;
-  border-color: transparent;
+  border: 7px solid transparent;
 
   &:nth-child(3n) {
     margin-right: 0;
@@ -64,6 +71,9 @@
 }
 
 .offer__price {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   align-items: baseline;
   margin-bottom: 28px;
@@ -74,7 +84,20 @@
 
   color: $prices-color;
 
-  text-shadow: 3 3 3 #000;
+  &::before {
+    content: attr(data-price);
+
+    position: absolute;
+    left: 50%;
+    bottom: 29px;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    font-weight: bold;
+    font-size: 100px;
+
+    color: $prices-shadow-color;
+  }
 }
 
 .offer__unit {
@@ -103,5 +126,61 @@
 
   &:active {
     opacity: 0.7;
+  }
+}
+
+@media (max-width: $tablet-width-only) {
+  .offer__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer__item {
+    width: 57.55%; //442px
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .offer__list {
+    padding: 0 15px;
+  }
+
+  .offer__item {
+    width: 100%;
+    max-width: 442px;
+    margin-bottom: 35px;
+    padding: 44px 34px 47px;
+
+    h3 {
+      margin-bottom: 9px;
+
+      font-size: 22px;
+      line-height: 24px;
+    }
+  }
+
+  .offer__term {
+    margin-bottom: 56px;
+  }
+
+  .offer__price {
+    margin-bottom: 24px;
+
+    font-size: 48px;
+    line-height: 72px;
+
+    &::before {
+      bottom: 24px;
+
+      font-size: 80px;
+    }
+  }
+
+  .offer__unit {
+    margin-left: 9px;
+  }
+
+  .offer__button {
+    width: 100%;
   }
 }

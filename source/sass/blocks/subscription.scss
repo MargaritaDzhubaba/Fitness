@@ -1,5 +1,29 @@
 .subscription {
+  position: relative;
+
   background-color: $bg-color;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: -150px;
+    right: -183px;
+
+    width: 470px;
+    height: 494px;
+
+    background-color: transparent;
+    background-image: url("../img/barbell-discs.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/barbell-discs@2x.png");
+      background-size: 470px 494px;
+    }
+  }
 }
 
 .subscription__wrapper {
@@ -8,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 121px 0 120px;
+  padding: 121px 0 80px;
 
   h2 {
     margin: 0;
@@ -53,6 +77,8 @@
 }
 
 .subscription__term-button {
+  @include transition;
+
   position: relative;
 
   padding: 0;
@@ -67,8 +93,11 @@
   border: none;
   background-color: transparent;
 
+  &--active,
   &:hover,
   &:focus {
+    color: $text-color;
+
     &::after {
       content:"";
 
@@ -81,5 +110,72 @@
 
       background-color: $tab-slider-color;
     }
+  }
+}
+
+@media (max-width: $tablet-width-only) {
+  .subscription::after {
+    bottom: -175px;
+    right: -123px;
+
+    background-size: 423px auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-size: 423px auto;
+    }
+  }
+
+  .subscription__wrapper {
+    padding: 101px 0 60px;
+
+    h2 {
+      margin-bottom: 27px;
+
+      font-size: 42px;
+      line-height: 42px;
+    }
+  }
+
+  .subscription__term-list {
+    margin-bottom: 58px;
+  }
+
+  .subscription__term-item {
+    margin-right: 55px;
+  }
+
+  .subscription__term-button {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .subscription::after {
+    content: none;
+  }
+
+  .subscription__wrapper {
+    padding: 70px 0 35px;
+
+    h2 {
+      margin-bottom: 21px;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  .subscription__term-list {
+    margin-bottom: 48px;
+  }
+
+  .subscription__term-item {
+    margin-right: 46px;
+  }
+
+  .subscription__term-button {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
