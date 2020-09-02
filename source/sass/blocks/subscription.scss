@@ -1,0 +1,85 @@
+.subscription {
+  background-color: $bg-color;
+}
+
+.subscription__wrapper {
+  @include wrapper;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 121px 0 120px;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 33px;
+
+    font-family: $decorative-font;
+    font-weight: bold;
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: 0.03em;
+  }
+}
+
+.subscription__term-list {
+  @include reset-list;
+
+  position: relative;
+
+  display: flex;
+  margin-bottom: 51px;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: rgba(120, 120, 120, 0.2);
+  }
+}
+
+.subscription__term-item {
+  margin-right: 47px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.subscription__term-button {
+  position: relative;
+
+  padding: 0;
+
+  font-family: $default-font;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: transparentize($text-color, 0.5);
+
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    &::after {
+      content:"";
+
+      position: absolute;
+      bottom: -13px;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background-color: $tab-slider-color;
+    }
+  }
+}

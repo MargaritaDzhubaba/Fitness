@@ -3,8 +3,8 @@
 
   display: flex;
 
-  padding-top: 115px;
-  padding-bottom: 94px;
+  // padding-top: 115px;
+  padding-bottom: 51px;
 }
 
 .banner__text {
@@ -16,6 +16,7 @@
 
   width: 396px;
   margin-right: 65px;
+  padding-top: 115px;
 
   font-family: $decorative-font;
   text-align: right;
@@ -68,7 +69,7 @@
 
 .banner__img {
   display: block;
-  margin-top: -121px;
+  margin-top: -6px;
 }
 
 .banner__networks {
@@ -79,9 +80,10 @@
   align-items: flex-end;
   justify-content: flex-end;
   margin-left: auto;
+  padding-bottom: 42px;
 
   li {
-    margin-bottom: 18px;
+    margin-bottom: 19px;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -104,13 +106,13 @@
 @media (max-width: $tablet-width-only) {
   .banner {
     width: 100%;
-    padding-top: 75px;
     padding-bottom: 82px;
   }
 
   .banner__text {
     width: calc(50% - 15px);
     margin-right: auto;
+    padding-top: 75px;
 
     span {
       font-size: 34px;
@@ -136,7 +138,7 @@
   }
 
   .banner__img {
-    margin-top: -57px;
+    margin-top: 18px;
     width: 324px;
     height: 390px;
 
@@ -164,6 +166,7 @@
     width: 100%;
     max-width: 450px; // для улучшения внещнего вида при растягивании экрана
     margin-right: 0; // для улучшения внещнего вида при растягивании экрана
+    padding-top: 0;
 
     span {
       font-size: 28px;
