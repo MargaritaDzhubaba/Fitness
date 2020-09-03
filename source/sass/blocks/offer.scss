@@ -28,7 +28,7 @@
 
   width: 31%; //360px
   margin-bottom: 40px;
-  padding: 50px 68px 60px;
+  padding: 49px 68px 60px;
 
   background-color: $main-color;
 
@@ -43,7 +43,7 @@
     border: 7px solid;
     border-image-slice: 1;
     border-width: 7px;
-    border-image-source: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
+    border-image-source: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
   }
 
   h3 {
@@ -85,7 +85,7 @@
   color: $prices-color;
 
   &::before {
-    content: attr(data-price);
+    content: "";
 
     position: absolute;
     left: 50%;
@@ -118,7 +118,7 @@
   &:focus,
   &:hover {
     color: $main-color;
-    background: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
+    background: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
 
     box-shadow: none;
     opacity: 1;
@@ -137,6 +137,7 @@
 
   .offer__item {
     width: 57.55%; //442px
+    padding-top: 50px;
   }
 }
 

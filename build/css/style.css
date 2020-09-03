@@ -122,7 +122,7 @@ input[type="radio"].visually-hidden {
     opacity: 0.7; }
 
 .header-wrapper {
-  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #B80027 -46.69deg, #003D85 32.24deg, #B80027 313.31deg, #003D85 392.24deg); }
+  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg); }
 
 .page-header {
   margin: 0 auto;
@@ -506,25 +506,45 @@ input[type="radio"].visually-hidden {
     height: 73px;
     background-size: 73px 73px; } }
 
+.page-wrapper {
+  position: relative;
+  overflow: hidden; }
+
+.page-wrapper--subscription {
+  position: relative; }
+
+.page-wrapper--subscription::after {
+  content: "";
+  position: absolute;
+  top: 507px;
+  right: -183px;
+  width: 470px;
+  height: 494px;
+  background-color: transparent;
+  background-image: url("../img/barbell-discs.png");
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .page-wrapper--subscription::after {
+      background-image: url("../img/barbell-discs@2x.png");
+      background-size: 470px 494px; } }
+
+@media (max-width: 1199px) {
+  .page-wrapper--subscription::after {
+    bottom: 175px;
+    right: -123px;
+    background-size: 423px auto; } }
+  @media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
+    .page-wrapper--subscription::after {
+      background-size: 423px auto; } }
+
+@media (max-width: 767px) {
+  .page-wrapper--subscription::after {
+    content: none; } }
+
 .subscription {
   position: relative;
-  background-color: #f8f9fc;
-  overflow: hidden; }
-  .subscription::after {
-    content: "";
-    position: absolute;
-    bottom: -150px;
-    right: -183px;
-    width: 470px;
-    height: 494px;
-    background-color: transparent;
-    background-image: url("../img/barbell-discs.png");
-    background-repeat: no-repeat;
-    background-position: 0 0; }
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-      .subscription::after {
-        background-image: url("../img/barbell-discs@2x.png");
-        background-size: 470px 494px; } }
+  background-color: #f8f9fc; }
 
 .subscription__wrapper {
   margin: 0 auto;
@@ -611,15 +631,6 @@ input[type="radio"].visually-hidden {
       background-color: #d10a42; }
 
 @media (max-width: 1199px) {
-  .subscription::after {
-    bottom: -175px;
-    right: -123px;
-    background-size: 423px auto; } }
-  @media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
-    .subscription::after {
-      background-size: 423px auto; } }
-
-@media (max-width: 1199px) {
   .subscription__wrapper {
     padding: 101px 0 60px; }
     .subscription__wrapper h2 {
@@ -635,8 +646,6 @@ input[type="radio"].visually-hidden {
     line-height: 27px; } }
 
 @media (max-width: 767px) {
-  .subscription::after {
-    content: none; }
   .subscription__wrapper {
     padding: 70px 0 35px; }
     .subscription__wrapper h2 {
@@ -688,7 +697,7 @@ input[type="radio"].visually-hidden {
           align-items: center;
   width: 31%;
   margin-bottom: 40px;
-  padding: 50px 68px 60px;
+  padding: 49px 68px 60px;
   background-color: #ffffff;
   border: 7px solid transparent; }
   .offer__item:nth-child(3n) {
@@ -697,7 +706,7 @@ input[type="radio"].visually-hidden {
     border: 7px solid;
     border-image-slice: 1;
     border-width: 7px;
-    border-image-source: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%); }
+    border-image-source: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%); }
   .offer__item h3 {
     margin: 0;
     margin-bottom: 5px;
@@ -729,7 +738,7 @@ input[type="radio"].visually-hidden {
   line-height: 90px;
   color: #103aae; }
   .offer__price::before {
-    content: attr(data-price);
+    content: "";
     position: absolute;
     left: 50%;
     bottom: 29px;
@@ -753,7 +762,7 @@ input[type="radio"].visually-hidden {
           box-shadow: inset 0 0 0 2px #102654; }
   .offer__button:focus, .offer__button:hover {
     color: #ffffff;
-    background: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
+    background: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
     -webkit-box-shadow: none;
             box-shadow: none;
     opacity: 1; }
@@ -770,7 +779,8 @@ input[type="radio"].visually-hidden {
         -ms-flex-align: center;
             align-items: center; }
   .offer__item {
-    width: 57.55%; } }
+    width: 57.55%;
+    padding-top: 50px; } }
 
 @media (max-width: 767px) {
   .offer__list {
@@ -797,3 +807,104 @@ input[type="radio"].visually-hidden {
     margin-left: 9px; }
   .offer__button {
     width: 100%; } }
+
+.promo {
+  margin: 0 auto;
+  max-width: 1260px;
+  width: 100%;
+  padding: 120px 50px 60px;
+  background-color: #ffffff; }
+
+.promo__wrapper {
+  width: 100%;
+  background-color: #103aae;
+  background-image: url("../img/super-games-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .promo__wrapper {
+      background-image: url("../img/super-games-bg@2x.jpg"); } }
+
+.promo__info {
+  width: 43.1%;
+  padding: 80px 79px 85px 78px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+  background-color: #ed0233; }
+  .promo__info p {
+    margin: 0; }
+
+.promo__info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3px; }
+  .promo__info-wrapper h2 {
+    margin: 0;
+    margin-top: 8px;
+    font-family: "Bebas Neue", "Helvetica", sans-serif;
+    font-weight: bold;
+    font-size: 90px;
+    line-height: 90px;
+    letter-spacing: 0.03em; }
+
+.promo__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 92px; }
+
+.promo__data {
+  margin-bottom: 8px; }
+
+.promo__caption {
+  margin: 0;
+  font-family: "Roboto Condensed", "Aria", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px; }
+
+.promo__details {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px; }
+  .promo__details::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff; }
+
+.promo__details-small {
+  margin-left: 6px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px; }
+
+.promo__button {
+  margin-top: 46px;
+  padding: 29px 24px 28px; }

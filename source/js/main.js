@@ -19,8 +19,8 @@ var offerList = document.querySelectorAll('.offer__list');
 
 if (offerList) {
   subscriptionBtn.forEach(function (button) {
-    button.classList.remove('subscription__term-button--active')
-  })
+    button.classList.remove('subscription__term-button--active');
+  });
   offerList.forEach(function (list) {
     list.classList.remove('offer__list--active');
   });
@@ -29,7 +29,7 @@ if (offerList) {
   offerList[0].classList.add('offer__list--active');
 
   var changeList = function (index) {
-    subscriptionBtn.forEach( function (button) {
+    subscriptionBtn.forEach(function (button) {
       button.classList.remove('subscription__term-button--active');
     });
     offerList.forEach(function (list) {
