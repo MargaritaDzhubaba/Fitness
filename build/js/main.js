@@ -47,3 +47,26 @@ if (offerList) {
     });
   });
 }
+
+// Слайдер trainers
+var sliderTrainer = new Swiper('.slider', {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  navigation: {
+    nextEl: '.trainers__button-next',
+    prevEl: '.trainers__button-prev'
+  },
+  loop: true, // зацикливает слайдер
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30
+    },
+    1200: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 40
+    }
+  }
+});

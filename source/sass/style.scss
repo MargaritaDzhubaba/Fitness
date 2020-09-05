@@ -4,6 +4,12 @@
 @import "basic-settings.scss";
 @import "visually-hidden.scss";
 
+//vendor
+@import "vendor/functions.scss";
+@import "vendor/swiper.scss";
+@import "vendor/core.scss";
+@import "vendor/navigation.scss";
+
 //blocks
 @import "blocks/button.scss";
 @import "blocks/header-wrapper.scss";
@@ -14,3 +20,5 @@
 @import "blocks/subscription.scss";
 @import "blocks/offer.scss";
 @import "blocks/promo.scss";
+@import "blocks/trainers.scss";
+@import "blocks/swiper.scss";

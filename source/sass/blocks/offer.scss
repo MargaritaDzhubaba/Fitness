@@ -85,7 +85,7 @@
   color: $prices-color;
 
   &::before {
-    content: "";
+    content: attr(data-price);
 
     position: absolute;
     left: 50%;

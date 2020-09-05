@@ -2,27 +2,6 @@
   position: relative;
 
   background-color: $bg-color;
-
-  // &::after {
-  //   content: "";
-
-  //   position: absolute;
-  //   bottom: -150px;
-  //   right: -183px;
-
-  //   width: 470px;
-  //   height: 494px;
-
-  //   background-color: transparent;
-  //   background-image: url("../img/barbell-discs.png");
-  //   background-repeat: no-repeat;
-  //   background-position: 0 0;
-
-  //   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-  //     background-image: url("../img/barbell-discs@2x.png");
-  //     background-size: 470px 494px;
-  //   }
-  // }
 }
 
 .subscription__wrapper {
@@ -113,17 +92,6 @@
 }
 
 @media (max-width: $tablet-width-only) {
-  // .subscription::after {
-  //   bottom: -175px;
-  //   right: -123px;
-
-  //   background-size: 423px auto;
-
-  //   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-  //     background-size: 423px auto;
-  //   }
-  // }
-
   .subscription__wrapper {
     padding: 101px 0 60px;
 
@@ -150,10 +118,6 @@
 }
 
 @media (max-width: $mobile-width-only) {
-  // .subscription::after {
-  //   content: none;
-  // }
-
   .subscription__wrapper {
     padding: 70px 0 35px;
 
