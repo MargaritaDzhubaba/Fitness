@@ -10,17 +10,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 121px 0 80px;
+  padding-top: 121px;
+  padding-bottom: 80px;
 
   h2 {
-    margin: 0;
-    margin-bottom: 33px;
+    @include title;
 
-    font-family: $decorative-font;
-    font-weight: bold;
-    font-size: 49px;
-    line-height: 49px;
-    letter-spacing: 0.03em;
+    margin-bottom: 33px;
   }
 }
 
@@ -93,13 +89,11 @@
 
 @media (max-width: $tablet-width-only) {
   .subscription__wrapper {
-    padding: 101px 0 60px;
+    padding-top: 101px;
+    padding-bottom: 60px;
 
     h2 {
       margin-bottom: 27px;
-
-      font-size: 42px;
-      line-height: 42px;
     }
   }
 
@@ -119,13 +113,11 @@
 
 @media (max-width: $mobile-width-only) {
   .subscription__wrapper {
-    padding: 70px 0 35px;
+    padding-top: 70px;
+    padding-bottom: 35px;
 
     h2 {
       margin-bottom: 21px;
-
-      font-size: 32px;
-      line-height: 32px;
     }
   }
 

@@ -31,3 +31,23 @@
     padding-right: 50px;
   }
 }
+
+@mixin title {
+  margin-top: 0;
+
+  font-family: $decorative-font;
+  font-weight: bold;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+
+  @media (max-width: $tablet-width-only) {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}

@@ -16,14 +16,9 @@
   padding-top: 49px;
 
   h2 {
-    margin-top: 0;
-    margin-bottom: 5px;
+    @include title;
 
-    font-family: $decorative-font;
-    font-weight: bold;
-    font-size: 49px;
-    line-height: 49px;
-    letter-spacing: 0.03em;
+    margin-bottom: 5px;
   }
 
   b {
@@ -125,9 +120,6 @@
     h2 {
       margin-top: 0;
       margin-bottom: 6px;
-
-      font-size: 42px;
-      line-height: 42px;
     }
 
     b {
@@ -170,7 +162,7 @@
 
 @media (max-width: $mobile-width-only) {
   .info {
-    padding: 70px 0 70px;
+    padding: 70px 0;
 
     max-width: 660px;
   }
@@ -181,9 +173,6 @@
 
     h2 {
       margin-bottom: 4px;
-
-      font-size: 32px;
-      line-height: 32px;
     }
 
     b {
@@ -212,12 +201,5 @@
 
     width: 100%;
     height: 167px;
-  }
-
-  .info__video-button {
-    width: 73px;
-    height: 73px;
-
-    background-size: 73px 73px;
   }
 }
