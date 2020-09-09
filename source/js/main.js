@@ -49,7 +49,7 @@ if (offerList) {
 }
 
 // Слайдер trainers
-var sliderTrainer = new Swiper('.slider', {
+var sliderTrainer = new Swiper('.slider-trainers', {
   slidesPerView: 1,
   slidesPerGroup: 1,
   navigation: {
@@ -70,3 +70,19 @@ var sliderTrainer = new Swiper('.slider', {
     }
   }
 });
+
+// Cлайдер review
+var sliderRewiew = new Swiper('.slider-rewiew', {
+  navigation: {
+    nextEl: '.review__button-next',
+    prevEl: '.review__button-prev'
+  },
+});
+
+// Маска
+var Phone = document.querySelector('#phone');
+var maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+
+var mask = new IMask(phone, maskOptions);

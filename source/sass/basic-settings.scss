@@ -32,14 +32,14 @@ body {
 a {
   text-decoration: none;
 
-  &:hover,
-  &:focus {
+  &[href]:hover,
+  &[href]:focus {
     @include transition;
 
     opacity: 0.5;
   }
 
-  &:active {
+  &[href]:active {
     @include transition;
 
     opacity: 0.7;

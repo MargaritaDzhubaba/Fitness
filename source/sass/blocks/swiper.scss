@@ -64,4 +64,19 @@
   .swiper-button-next {
     right: -11px;
   }
+
+  .review__list {
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 54%;
+    }
+
+    .swiper-button-prev {
+      left: -32px;
+    }
+
+    .swiper-button-next {
+      right: -32px;
+    }
+  }
 }

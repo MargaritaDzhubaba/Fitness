@@ -1,0 +1,164 @@
+.page-footer {
+  padding-top: 42px;
+  padding-bottom: 36px;
+
+  background-color: $footer-color;
+}
+
+.page-footer__wrapper {
+  @include wrapper;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $main-color;
+}
+
+.page-footer__nav-list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 794px;
+}
+
+// .page-footer__nav-item--logo {
+//   margin-right: auto;
+// }
+
+.page-footer__nav-item {
+  margin-right: 40px;
+
+  &:first-child {
+    margin-right: auto;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.page-footer__nav-link {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: $main-color;
+}
+
+.page-footer__networks {
+  @include reset-list;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 110px;
+
+  li {
+    margin-right: 25px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: $tablet-width-only) {
+  .page-footer {
+    padding-top: 44px;
+    padding-bottom: 40px;
+  }
+
+  .page-footer__nav-list {
+    width: 533px;
+  }
+
+  .page-footer__nav-item {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .page-footer__nav-item--logo {
+    img {
+      width: 82px;
+      height: 18px;
+    }
+  }
+
+  .page-footer__networks {
+    max-width: 100px;
+    margin-left: 43px;
+
+    li {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .page-footer {
+    padding-top: 50px;
+    padding-bottom: 44px;
+  }
+
+  .page-footer__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-footer__nav-list {
+    // flex-direction: column;
+    // align-items: flex-start;
+    display: block;
+    width: 100%;
+    height: 120px;
+    column-count: 2;
+    column-gap: 30px;
+
+    margin-bottom: 13px;
+  }
+
+  .page-footer__nav-item {
+    // width: 48%;
+    margin-right: 0;
+    margin-bottom: 18px;
+
+    &:first-child {
+      margin-right: 0;
+      margin-bottom: 14px;
+    }
+  }
+
+  .page-footer__nav-item--logo {
+    img {
+      width: 68px;
+      height: 15px;
+    }
+  }
+
+  .page-footer__nav-link {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .page-footer__networks {
+    max-width: 100%;
+    margin-left: 0;
+
+    li {
+      margin-right: 35px;
+    }
+  }
+
+  .page-footer__network-item {
+    svg {
+      height: 27px;
+      width: 27px;
+    }
+  }
+}
