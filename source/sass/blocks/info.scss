@@ -72,6 +72,13 @@
 
     background-color: rgba(20, 54, 122, 0.5);
   }
+
+  &:hover,
+  &:focus {
+    &::after {
+      background-color: rgba(20, 54, 122, 0.3);
+    }
+  }
 }
 
 .info__video-button {

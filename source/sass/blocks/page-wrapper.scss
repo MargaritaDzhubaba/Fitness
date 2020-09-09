@@ -12,7 +12,8 @@
   content: "";
 
   position: absolute;
-  top: 507px;
+  // top: 507px;
+  bottom: 590px;
   right: -183px;
 
   width: 470px;
@@ -31,7 +32,7 @@
 
 @media (max-width: $tablet-width-only) {
   .page-wrapper--subscription::after {
-    bottom: 175px;
+    bottom: 317px;
     right: -123px;
 
     background-size: 423px auto;
