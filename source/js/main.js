@@ -80,9 +80,13 @@ var sliderRewiew = new Swiper('.slider-rewiew', {
 });
 
 // Маска
-var Phone = document.querySelector('#phone');
-var maskOptions = {
-  mask: '+{7}(000)000-00-00'
-};
+var phone = document.querySelector('#phone');
 
-var mask = new IMask(phone, maskOptions);
+if (phone) {
+  var maskOptions = {
+    mask: '+{7}(000)000-00-00'
+  };
+
+  var mask = new IMask(phone, maskOptions);
+}
+
