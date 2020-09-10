@@ -103,7 +103,7 @@
 
   border: 7px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(#D10A42 0%,#00359F 100%);
+  border-image-source: linear-gradient(#d10a42 0%, #00359f 100%);
 
   &:last-child {
     margin-bottom: 0;
@@ -233,6 +233,7 @@
 
   .discount__info-wrapper {
     align-items: center;
+    padding: 42px 45px 45px;
   }
 
   .discount__img {

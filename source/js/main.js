@@ -1,3 +1,4 @@
+/* eslint-disable new-cap, no-undef, no-undef, no-unused-vars */
 'use strict';
 // Скрол
 var bannerScroll = document.querySelector('.banner-scroll');
@@ -89,4 +90,3 @@ if (phone) {
 
   var mask = new IMask(phone, maskOptions);
 }
-
