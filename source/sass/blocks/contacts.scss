@@ -1,11 +1,33 @@
 .contacts {
-  width: 100%;
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    background: linear-gradient(to right, $text-color 50%, transparent 50%);
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      width: 50%;
+      height: 1px;
+      background-color: $form-color;
+    }
+  }
+}
+
+.contacts__wrapper {
   display: flex;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
 }
 
 .contacts__feedback {
   width: 50%;
-  padding: 70px 170px 68px 103px;
+  padding: 70px 170px 68px 0;
   color: $main-color;
   background-color: $text-color;
 
@@ -74,8 +96,7 @@
 
 .contacts__info {
   width: 50%;
-  padding: 70px 33px 45px 120px;;
-  border-top: 1px solid $form-color;
+  padding: 70px 30px 45px 120px;
 
   h2 {
     @include title;
@@ -92,27 +113,24 @@
   position: relative;
 
   width: calc(50% - 30px);
-  margin-right: 55px;
+  margin-right: 49px;
   padding-left: 4px;
-
-  &::after {
-    content: "";
-
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 1px;
-    height: 100px;
-    background-color: $form-color;;
-  }
 
   &:last-child {
     margin-right: 0;
+    padding-left: 60px;
 
-    &::after {
-      content: none;
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 1px;
+      height: 100px;
+      background-color: $form-color;
     }
   }
 
@@ -138,7 +156,7 @@
 }
 
 @media (max-width: $tablet-width-only) {
-  .contacts {
+  .contacts__wrapper {
     flex-direction: column;
   }
 
@@ -181,8 +199,13 @@
     margin-right: 47px;
     padding-left: 0;
 
-    &::after {
-      height: 129px;
+    &:last-child {
+      padding-left: 0;
+
+      &::before {
+        left: -48px;
+        height: 129px;
+      }
     }
 
     dl {
@@ -204,6 +227,10 @@
 }
 
 @media (max-width: $mobile-width-only) {
+  .contacts {
+    background-color: none;
+  }
+
   .contacts__feedback {
     padding: 70px 15px 68px 15px;
 

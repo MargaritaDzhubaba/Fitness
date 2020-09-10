@@ -54,3 +54,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "ALS Rubl";
+  src: local("ALS Rubl"),
+    url("../fonts/ALSRubl.woff2") format("woff2"),
+    url("../fonts/ALSRubl.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

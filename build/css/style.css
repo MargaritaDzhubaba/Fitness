@@ -33,6 +33,12 @@
   font-style: normal;
   font-display: swap; }
 
+@font-face {
+  font-family: "ALS Rubl";
+  src: local("ALS Rubl"), url("../fonts/ALSRubl.woff2") format("woff2"), url("../fonts/ALSRubl.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -1158,8 +1164,8 @@ input[type="radio"].visually-hidden {
     color: #e8e8e8; }
 
 .offer__unit {
-  margin-left: 14px;
-  font-family: "Bebas Neue", "Helvetica", sans-serif;
+  margin-left: 10px;
+  font-family: ALS Rubl;
   color: #102654; }
 
 .offer__button {
@@ -1347,6 +1353,7 @@ input[type="radio"].visually-hidden {
   .promo__info-wrapper {
     width: 202px; }
     .promo__info-wrapper h2 {
+      max-width: 116px;
       margin-top: 5px;
       font-size: 52px;
       line-height: 52px; }
@@ -2213,14 +2220,31 @@ input[type="radio"].visually-hidden {
       line-height: 26px; } }
 
 .contacts {
-  width: 100%;
+  position: relative; }
+  @media (min-width: 1200px) {
+    .contacts {
+      background: -webkit-gradient(linear, left top, right top, color-stop(50%, #102654), color-stop(50%, transparent));
+      background: linear-gradient(to right, #102654 50%, transparent 50%); }
+      .contacts::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 1px;
+        background-color: #74819c; } }
+
+.contacts__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto; }
 
 .contacts__feedback {
   width: 50%;
-  padding: 70px 170px 68px 103px;
+  padding: 70px 170px 68px 0;
   color: #ffffff;
   background-color: #102654; }
   .contacts__feedback h2 {
@@ -2309,8 +2333,7 @@ input[type="radio"].visually-hidden {
 
 .contacts__info {
   width: 50%;
-  padding: 70px 33px 45px 120px;
-  border-top: 1px solid #74819c; }
+  padding: 70px 30px 45px 120px; }
   .contacts__info h2 {
     margin-top: 0;
     font-family: "Bebas Neue", "Helvetica", sans-serif;
@@ -2336,22 +2359,21 @@ input[type="radio"].visually-hidden {
 .contacts__info-column {
   position: relative;
   width: calc(50% - 30px);
-  margin-right: 55px;
+  margin-right: 49px;
   padding-left: 4px; }
-  .contacts__info-column::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    width: 1px;
-    height: 100px;
-    background-color: #74819c; }
   .contacts__info-column:last-child {
-    margin-right: 0; }
-    .contacts__info-column:last-child::after {
-      content: none; }
+    margin-right: 0;
+    padding-left: 60px; }
+    .contacts__info-column:last-child::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      width: 1px;
+      height: 100px;
+      background-color: #74819c; }
   .contacts__info-column dt {
     margin-bottom: 4px;
     font-weight: bold;
@@ -2366,7 +2388,7 @@ input[type="radio"].visually-hidden {
     color: #102654; }
 
 @media (max-width: 1199px) {
-  .contacts {
+  .contacts__wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2393,8 +2415,11 @@ input[type="radio"].visually-hidden {
     width: calc(50% - 34px);
     margin-right: 47px;
     padding-left: 0; }
-    .contacts__info-column::after {
-      height: 129px; }
+    .contacts__info-column:last-child {
+      padding-left: 0; }
+      .contacts__info-column:last-child::before {
+        left: -48px;
+        height: 129px; }
     .contacts__info-column dl {
       margin-bottom: 20px; }
     .contacts__info-column dt {
@@ -2406,6 +2431,8 @@ input[type="radio"].visually-hidden {
       line-height: 27px; } }
 
 @media (max-width: 767px) {
+  .contacts {
+    background-color: none; }
   .contacts__feedback {
     padding: 70px 15px 68px 15px; }
     .contacts__feedback h2 {
