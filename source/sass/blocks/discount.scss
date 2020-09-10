@@ -222,6 +222,7 @@
 
   .discount__info {
     flex-direction: column;
+    align-items: center;
     height: auto;
 
     p {
@@ -235,6 +236,8 @@
   }
 
   .discount__img {
+    align-self: stretch;
+
     img {
       height: 299px;
     }

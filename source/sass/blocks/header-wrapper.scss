@@ -1,3 +1,11 @@
 .header-wrapper {
-  background: linear-gradient(49deg,#003d85 0%,#01018c 9%,#b80027 61%);
+  background-color: #b80027;
+  background-image: url("../img/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center left -100px;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/banner-bg@2x.jpg");
+  }
 }
