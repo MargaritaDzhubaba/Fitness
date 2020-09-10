@@ -14,6 +14,11 @@ if (bannerScroll) {
   });
 }
 
+// Polyfill
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
 // Таб с абонементами
 var subscriptionBtn = document.querySelectorAll('.subscription__term-button');
 var offerList = document.querySelectorAll('.offer__list');
