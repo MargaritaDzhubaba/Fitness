@@ -82,8 +82,6 @@
 }
 
 .info__video-button {
-  content: "";
-
   position: absolute;
 
   top: 50%;
@@ -98,6 +96,7 @@
   border: none;
 
   transition: transform 1s;
+  cursor: pointer;
 
   &:hover,
   &:focus {

@@ -50,7 +50,8 @@
   @include reset-list;
 
   position: absolute;
-  bottom: 188px;
+  // bottom: 188px;
+  top: 299px;
   right: 263px;
 
   font-family: $default-font;
@@ -127,7 +128,8 @@
   }
 
   .banner__services-list {
-    bottom: 141px;
+    top: 204px;
+    // bottom: 141px;
     right: 211px;
   }
 
@@ -180,7 +182,7 @@
   }
 
   .banner__services-list {
-    bottom: 117px;
+    top: 118px;
     right: 177px;
   }
 

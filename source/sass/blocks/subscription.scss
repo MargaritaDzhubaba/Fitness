@@ -67,10 +67,13 @@
   border: none;
   background-color: transparent;
 
+  cursor: pointer;
+
   &--active,
   &:hover,
   &:focus {
     color: $text-color;
+    outline: none;
 
     &::after {
       content: "";
@@ -84,6 +87,10 @@
 
       background-color: $tab-slider-color;
     }
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 
@@ -103,6 +110,7 @@
 
   .subscription__term-item {
     margin-right: 55px;
+
   }
 
   .subscription__term-button {
